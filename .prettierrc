@@ -1,0 +1,12 @@
+{
+  "arrowParens": "always",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "semi": true,
+  "endOfLine": "lf",
+  "jsxSingleQuote": false,
+  "singleAttributePerLine": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "parser": "typescript"
+}
