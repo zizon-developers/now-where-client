@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Platform, Text, View, StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import Device from 'expo-device';
 import * as Location from 'expo-location';
+import { WebView } from 'react-native-webview';
 
 export default function App() {
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
@@ -36,9 +37,11 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>{text}</Text>
-    </View>
+    <WebView
+      style={styles.container}
+      onTouchStart={() => alert(text)}
+      source={{ uri: 'http://{너의 IP}:3000' }}
+    />
   );
 }
 
