@@ -1,12 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
-type LoginResponse = {
-  email: string;
-  name: string;
-  userId: string;
-};
+import { LoginResponse } from '../types/loginTypes';
 
 const KakaoOAuthRedirectPage = () => {
   const location = useLocation();
@@ -14,24 +9,30 @@ const KakaoOAuthRedirectPage = () => {
   const code = searchParams.get('code');
 
   useEffect(() => {
-    (async () => {
-      const loginResponse = await axios.post<LoginResponse>(
-        'http://15.164.233.102:8088/api/v1/auth/login',
-        {
-          code,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
+    if (code) {
+      (async () => {
+        try {
+          const loginResponse = await axios.post<LoginResponse>(
+            'http://15.164.233.102:8088/api/v1/auth/login',
+            {
+              code,
+            },
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          );
+
+          const { email, name, userId } = loginResponse.data;
+
+          console.log({ email, name, userId });
+        } catch (error) {
+          console.error('An error occurred while making the request:', error);
         }
-      );
-
-      const { email, name, userId } = loginResponse.data;
-
-      console.log({ email, name, userId });
-    })();
-  }, []);
+      })();
+    }
+  }, [code]); // code가 변경될 때에만 실행
 
   return <main>{code}</main>;
 };
