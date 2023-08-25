@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import LoginPage from './pages/Loginpage';
+import LoginPage from './pages/LoginPage';
 import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
 
 const App = () => {
