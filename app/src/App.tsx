@@ -4,18 +4,16 @@ import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={<LoginPage />}
-        />
-        <Route
-          path="/auth/callback/kakao"
-          element={<KakaoOAuthRedirectPage />}
-        />
-      </Routes>
-    </>
+    <Routes>
+      <Route
+        path="/login"
+        element={<LoginPage />}
+      />
+      <Route
+        path="/auth/callback/kakao"
+        element={<KakaoOAuthRedirectPage />}
+      />
+    </Routes>
   );
 };
 

@@ -5,11 +5,7 @@ const LoginPage: React.FC = () => {
   const handleLogin = () => {
     window.location.href = kakaoURL;
   };
-  return (
-    <>
-      <button onClick={handleLogin}>카카오 로그인</button>
-    </>
-  );
+  return <button onClick={handleLogin}>카카오 로그인</button>;
 };
 
 export default LoginPage;
