@@ -6,6 +6,10 @@ const App = () => {
   return (
     <Routes>
       <Route
+        path="/"
+        element={<main></main>}
+      />
+      <Route
         path="/login"
         element={<LoginPage />}
       />

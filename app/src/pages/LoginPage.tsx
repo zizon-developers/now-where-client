@@ -1,13 +1,9 @@
 import React from 'react';
-import { RiKakaoTalkFill } from 'react-icons/ri';
+import { kakaoAuthURL } from '../constants/Kakao';
 
 const LoginPage: React.FC = () => {
-  const Rest_api_key = '867de5dcb061c1d22c4188893654cddb'; // REST API KEY
-  const redirect_uri = 'http://localhost:3000/auth/callback/kakao'; // Redirect URI
-  const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`;
-
-  const handleLogin = () => {
-    window.location.href = kakaoURL;
+  const handleLoginButtonClick = () => {
+    window.location.href = kakaoAuthURL;
   };
 
   return (
@@ -18,11 +14,14 @@ const LoginPage: React.FC = () => {
         className="w-[270px] h-auto mb-[200px]"
       />
       <button
-        onClick={handleLogin}
-        className="flex items-center justify-center p-4 pt-3 pb-3 space-x-6 bg-yellow-400 rounded-lg shadow-lg hover:bg-yellow-500 focus:outline-none"
+        onClick={handleLoginButtonClick}
+        className="flex items-center justify-center"
       >
-        <RiKakaoTalkFill style={{ fontSize: '30px' }} />
-        <span className="text-black text-opacity-60 pr-7 font-semibold">카카오 로그인</span>
+        <img
+          src="./kakaologin.png"
+          alt="카카오 로그인"
+          className="w-52 h-auto mr-2"
+        />
       </button>
     </div>
   );
