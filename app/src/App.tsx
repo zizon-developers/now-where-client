@@ -1,20 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
+import Pathname from './constants/Pathname';
 
 const App = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path={Pathname.HOME_PAGE}
         element={<main></main>}
       />
       <Route
-        path="/login"
+        path={Pathname.LOGIN_PAGE}
         element={<LoginPage />}
       />
       <Route
-        path="/auth/callback/kakao"
+        path={Pathname.KAKAO_AUTH_PAGE}
         element={<KakaoOAuthRedirectPage />}
       />
     </Routes>
