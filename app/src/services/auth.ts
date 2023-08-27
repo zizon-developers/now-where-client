@@ -7,7 +7,5 @@ export const kakaoLogin = async ({ code }: KakaoLoginRequest) => {
     code,
   });
 
-  console.log(headers.authorization, headers['Authorization'], headers.Authorization);
-
   return { data, headers };
 };
