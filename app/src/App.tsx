@@ -1,19 +1,24 @@
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
+import Pathname from './constants/Pathname';
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
   return (
-    <main className="w-screen h-screen flex justify-center items-center">
-      <p>count: {count}</p>
-      <button
-        type="button"
-        className="p-4 bg-gray-300 text-white text-lg text-bold"
-        onClick={() => setCount((prev) => prev + 1)}
-      >
-        click!
-      </button>
-    </main>
+    <Routes>
+      <Route
+        path={Pathname.HOME_PAGE}
+        element={<main></main>}
+      />
+      <Route
+        path={Pathname.LOGIN_PAGE}
+        element={<LoginPage />}
+      />
+      <Route
+        path={Pathname.KAKAO_AUTH_PAGE}
+        element={<KakaoOAuthRedirectPage />}
+      />
+    </Routes>
   );
 };
 
