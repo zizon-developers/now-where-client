@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import { kakaoLogin } from '../../services/auth';
+import { kakaoLogout } from '../../services/auth';
 import { KakaoLoginRequest } from '../../types/auth/request';
 import Pathname from '../../constants/Pathname';
 
@@ -17,4 +18,14 @@ export const useKakaoLogin = ({ code }: KakaoLoginRequest) => {
     },
     enabled: Boolean(code),
   });
+};
+
+export const useKakaoLogout = async () => {
+  try {
+    await kakaoLogout();
+    localStorage.removeItem('ACCESS_TOKEN');
+    window.location.href = Pathname.LOGIN_PAGE;
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
 };
