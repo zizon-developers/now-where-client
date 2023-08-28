@@ -1,7 +1,9 @@
-import { useQuery } from 'react-query';
-import { kakaoLogin } from '../../services/auth';
+import { useQuery, useMutation } from 'react-query';
+import { kakaoLogin, logout } from '../../services/auth';
 import { KakaoLoginRequest } from '../../types/auth/request';
 import Pathname from '../../constants/Pathname';
+
+import { UseMutationOptions } from 'react-query';
 
 export const useKakaoLogin = ({ code }: KakaoLoginRequest) => {
   return useQuery({
@@ -16,5 +18,13 @@ export const useKakaoLogin = ({ code }: KakaoLoginRequest) => {
       window.location.href = Pathname.LOGIN_PAGE;
     },
     enabled: Boolean(code),
+  });
+};
+
+export const useLogout = (options: UseMutationOptions) => {
+  return useMutation({
+    mutationKey: ['kakaoLogout'],
+    mutationFn: () => logout(),
+    ...options,
   });
 };
