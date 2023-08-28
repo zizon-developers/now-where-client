@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery, useMutation } from 'react-query';
 import { kakaoLogin } from '../../services/auth';
 import { kakaoLogout } from '../../services/auth';
 import { KakaoLoginRequest } from '../../types/auth/request';
@@ -20,12 +20,15 @@ export const useKakaoLogin = ({ code }: KakaoLoginRequest) => {
   });
 };
 
-export const useKakaoLogout = async () => {
-  try {
-    await kakaoLogout();
-    localStorage.removeItem('ACCESS_TOKEN');
-    window.location.href = Pathname.LOGIN_PAGE;
-  } catch (error) {
-    console.error('Logout error:', error);
-  }
+export const useKakaoLogout = () => {
+  return useMutation(() => kakaoLogout(), {
+    onSuccess: () => {
+      localStorage.removeItem('ACCESS_TOKEN');
+      alert('로그아웃 되었습니다.');
+      window.location.href = Pathname.LOGIN_PAGE;
+    },
+    onError: (error) => {
+      console.error('Logout error:', error);
+    },
+  });
 };
