@@ -7,7 +7,6 @@ const reissueAccessToken = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      withCredentials: true,
     });
 
     const token = headers.authorization;
@@ -24,7 +23,6 @@ const createService = () => {
     headers: {
       'Content-Type': 'application/json',
     },
-    withCredentials: true,
   });
 
   service.interceptors.request.use((request) => {
