@@ -10,7 +10,7 @@ export const kakaoLogin = async ({ code }: KakaoLoginRequest) => {
   return { data, headers };
 };
 
-export const kakaoLogout = async () => {
+export const logout = async () => {
   try {
     const response = await Service.post('/users/logout');
     return response.data;

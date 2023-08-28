@@ -1,8 +1,9 @@
 import { useQuery, useMutation } from 'react-query';
-import { kakaoLogin } from '../../services/auth';
-import { kakaoLogout } from '../../services/auth';
+import { kakaoLogin, logout } from '../../services/auth';
 import { KakaoLoginRequest } from '../../types/auth/request';
 import Pathname from '../../constants/Pathname';
+
+import { UseMutationOptions } from 'react-query';
 
 export const useKakaoLogin = ({ code }: KakaoLoginRequest) => {
   return useQuery({
@@ -20,15 +21,10 @@ export const useKakaoLogin = ({ code }: KakaoLoginRequest) => {
   });
 };
 
-export const useKakaoLogout = () => {
-  return useMutation(() => kakaoLogout(), {
-    onSuccess: () => {
-      localStorage.removeItem('ACCESS_TOKEN');
-      alert('로그아웃 되었습니다.');
-      window.location.href = Pathname.LOGIN_PAGE;
-    },
-    onError: (error) => {
-      console.error('Logout error:', error);
-    },
+export const useLogout = (options: UseMutationOptions) => {
+  return useMutation({
+    mutationKey: ['kakaoLogout'],
+    mutationFn: () => logout(),
+    ...options,
   });
 };
