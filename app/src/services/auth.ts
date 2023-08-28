@@ -12,7 +12,8 @@ export const kakaoLogin = async ({ code }: KakaoLoginRequest) => {
 
 export const kakaoLogout = async () => {
   try {
-    await Service.post('/users/logout');
+    const response = await Service.post('/users/logout');
+    return response.data;
   } catch (error) {
     throw new Error('Logout failed');
   }
