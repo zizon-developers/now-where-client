@@ -35,6 +35,15 @@ const createService = () => {
     return request;
   });
 
+  service.interceptors.request.use((config) => {
+    const accessToken = localStorage.getItem('ACCESS_TOKEN');
+
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken}`;
+    }
+    return config;
+  });
+
   service.interceptors.response.use(
     (response) => response,
     async (error) => {
