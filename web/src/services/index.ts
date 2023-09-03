@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_HOST } from '../config';
+import { API_HOST } from 'config';
 
 const reissueAccessToken = async () => {
   try {
@@ -29,19 +29,10 @@ const createService = () => {
     const accessToken = localStorage.getItem('ACCESS_TOKEN');
 
     if (accessToken) {
-      request.headers.Authorization = accessToken;
+      request.headers.Authorization = `Bearer ${accessToken}`;
     }
 
     return request;
-  });
-
-  service.interceptors.request.use((config) => {
-    const accessToken = localStorage.getItem('ACCESS_TOKEN');
-
-    if (accessToken) {
-      config.headers.Authorization = `Bearer ${accessToken}`;
-    }
-    return config;
   });
 
   service.interceptors.response.use(

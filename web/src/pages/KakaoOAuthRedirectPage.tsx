@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useKakaoLogin } from '../hooks/services/auth';
+import { useKakaoLogin } from 'hooks/services/auth';
 
 const KakaoOAuthRedirectPage = () => {
   const location = useLocation();

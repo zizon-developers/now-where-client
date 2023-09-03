@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLogout } from '../hooks/services/auth';
+import { useLogout } from 'hooks/services/auth';
 
 const MyPage: React.FC = () => {
   const { mutate: logout } = useLogout({

@@ -1,7 +1,7 @@
 import { useQuery, useMutation } from 'react-query';
-import { kakaoLogin, logout } from '../../services/auth';
-import { KakaoLoginRequest } from '../../types/auth/request';
-import Pathname from '../../constants/Pathname';
+import { kakaoLogin, logout } from 'services/auth';
+import { KakaoLoginRequest } from 'types/auth/request';
+import Pathname from 'constants/Pathname';
 
 import { UseMutationOptions } from 'react-query';
 

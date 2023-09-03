@@ -1,5 +1,5 @@
 import React from 'react';
-import { kakaoAuthURL } from '../constants/Kakao';
+import { kakaoAuthURL } from 'constants/Kakao';
 
 const LoginPage: React.FC = () => {
   const handleLoginButtonClick = () => {
