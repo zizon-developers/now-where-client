@@ -3,7 +3,7 @@ import LoginPage from './pages/LoginPage';
 import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
 import Pathname from './constants/Pathname';
 import MyPage from './pages/mypage';
-import TransferRegistrationPage from './pages/TransferRegistrationPage';
+import PayLinkPage from './pages/PayLinkPage';
 
 const App = () => {
   return (
@@ -25,8 +25,8 @@ const App = () => {
         element={<MyPage />}
       />
       <Route
-        path={Pathname.TRANSFER_REGISTRATION_PAGE}
-        element={<TransferRegistrationPage />}
+        path={Pathname.PAY_LINK_PAGE}
+        element={<PayLinkPage />}
       />
     </Routes>
   );

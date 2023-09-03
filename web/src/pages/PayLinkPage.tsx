@@ -3,7 +3,7 @@ import Service from '../services/index';
 import { API_HOST } from '../config';
 import Pathname from '../constants/Pathname';
 
-const TransferRegistrationPage = () => {
+const PayLinkPage = () => {
   const [link, setLink] = useState<string>('');
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
@@ -135,7 +135,7 @@ const TransferRegistrationPage = () => {
           <input
             type="text"
             className="border rounded-lg w-full py-4 px-3 mr-1 focus:outline-none focus:border-red-500"
-            placeholder="송금 링크를 여기에 붙여넣거나 입력해주세요."
+            placeholder="링크를 여기에 붙여넣거나 입력해주세요."
             value={link}
             onChange={handleLinkChange}
           />
@@ -151,4 +151,4 @@ const TransferRegistrationPage = () => {
   );
 };
 
-export default TransferRegistrationPage;
+export default PayLinkPage;

@@ -3,7 +3,7 @@ const Pathname = {
   LOGIN_PAGE: '/login',
   KAKAO_AUTH_PAGE: '/auth/callback/kakao',
   MY_PAGE: '/me',
-  TRANSFER_REGISTRATION_PAGE: '/remittance',
+  PAY_LINK_PAGE: '/paylink',
 } as const;
 
 export default Pathname;
