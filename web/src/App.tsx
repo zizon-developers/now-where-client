@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
-import Pathname from './constants/Pathname';
-import MyPage from './pages/mypage';
-import PayLinkPage from './pages/PayLinkPage';
+import Pathname from 'constants/Pathname';
+import KakaoOAuthRedirectPage from 'pages/KakaoOAuthRedirectPage';
+import LoginPage from 'pages/LoginPage';
+import MyPage from 'pages/MyPage';
+import PayLinkPage from 'pages/PayLinkPage';
 
 const App = () => {
   return (
