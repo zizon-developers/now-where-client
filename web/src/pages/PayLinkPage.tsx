@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { cn } from 'libs/utils';
-import ArrowIcon from 'components/ArrowIcon';
+import ArrowLeftIcon from '../../public/arrow-icon/angle_left_icon_188313.svg';
+import ArrowRightIcon from '../../public/arrow-icon/angle_right_icon_188312.svg';
 import PayLinkForm from 'hooks/PayLinkFrom';
 import image1 from '/carousel-images/1.png';
 import image2 from '/carousel-images/2.png';
@@ -20,7 +21,12 @@ const PayLinkPage = () => {
   return (
     <div className="p-4 lg:p-8">
       <div className="flex items-center mb-14">
-        <ArrowIcon d="M15 19l-7-7 7-7" />
+        <img
+          src={ArrowLeftIcon}
+          alt="Arrow"
+          width="30"
+          height="30"
+        />
         <h1 className="text-2xl font-semibold flex-grow ml-20">송금 링크 등록</h1>
       </div>
 
@@ -35,13 +41,23 @@ const PayLinkPage = () => {
           onClick={loadPrevImage}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
         >
-          <ArrowIcon d="M15 19l-7-7 7-7" />
+          <img
+            src={ArrowLeftIcon}
+            alt="Arrow"
+            width="25"
+            height="25"
+          />
         </button>
         <button
           onClick={loadNextImage}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
         >
-          <ArrowIcon d="M9 5l7 7-7 7" />
+          <img
+            src={ArrowRightIcon}
+            alt="Arrow"
+            width="25"
+            height="25"
+          />
         </button>
       </div>
 
