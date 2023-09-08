@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-interface ButtonProps {
-  type: 'button' | 'submit' | 'reset';
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
-  onClick?: () => void;
   className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ type, text, onClick, className }) => {
+const Button: React.FC<ButtonProps> = ({ text, className, ...props }) => {
   return (
     <button
-      type={type}
-      onClick={onClick}
+      {...props}
       className={`bg-primary hover:bg-red-400 text-white py-2 px-6 rounded-md ${className}`}
     >
       {text}
