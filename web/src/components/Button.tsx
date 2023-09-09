@@ -1,17 +1,17 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  children: ReactNode;
   className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, className, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ children, className, ...props }) => {
   return (
     <button
       {...props}
       className={`bg-primary hover:bg-red-400 text-white py-2 px-6 rounded-md ${className}`}
     >
-      {text}
+      {children}
     </button>
   );
 };
