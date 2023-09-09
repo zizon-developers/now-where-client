@@ -29,7 +29,7 @@ const PayLinkForm = () => {
       />
       <Button
         type="submit"
-        text="등록"
+        children="등록"
         className="mt-4"
       />
     </form>
