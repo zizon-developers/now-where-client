@@ -29,9 +29,10 @@ const PayLinkForm = () => {
       />
       <Button
         type="submit"
-        children="등록"
         className="mt-4"
-      />
+      >
+        등록
+      </Button>
     </form>
   );
 };
