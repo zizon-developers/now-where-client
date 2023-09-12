@@ -1,5 +1,5 @@
-import PayLinkForm from 'components/PayLinkFrom';
-import PayLinkGuideCarousel from 'components/PayLinkGuideCarousel';
+import PayLinkForm from 'components/pay-link/PayLinkFrom';
+import PayLinkGuideCarousel from 'components/pay-link/PayLinkGuideCarousel';
 import { ReactComponent as LeftArrowIcon } from '../assets/arrow-icon/arrow_left_icon.svg';
 
 const PayLinkPage = () => {
