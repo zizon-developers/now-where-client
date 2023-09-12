@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ReactComponent as LeftArrowIcon } from '../assets/arrow-icon/arrow_left_icon.svg';
-import { ReactComponent as RightArrowIcon } from '../assets/arrow-icon/arrow_right_icon.svg';
+import { ReactComponent as LeftArrowIcon } from '../../assets/arrow-icon/arrow_left_icon.svg';
+import { ReactComponent as RightArrowIcon } from '../../assets/arrow-icon/arrow_right_icon.svg';
 import { cn } from 'libs/utils';
 
 type CarouselItem = {
