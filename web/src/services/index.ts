@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_HOST } from '../config';
+import { API_HOST } from 'config';
 
 const reissueAccessToken = async () => {
   try {
@@ -29,7 +29,7 @@ const createService = () => {
     const accessToken = localStorage.getItem('ACCESS_TOKEN');
 
     if (accessToken) {
-      request.headers.Authorization = accessToken;
+      request.headers.Authorization = `Bearer ${accessToken}`;
     }
 
     return request;

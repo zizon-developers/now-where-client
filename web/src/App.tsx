@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import KakaoOAuthRedirectPage from './pages/KakaoOAuthRedirectPage';
-import Pathname from './constants/Pathname';
-import MyPage from './pages/mypage';
+import Pathname from 'constants/Pathname';
+import KakaoOAuthRedirectPage from 'pages/KakaoOAuthRedirectPage';
+import LoginPage from 'pages/LoginPage';
+import MyPage from 'pages/MyPage';
+import PayLinkPage from 'pages/PayLinkPage';
 
 const App = () => {
   return (
@@ -22,6 +23,10 @@ const App = () => {
       <Route
         path={Pathname.MY_PAGE}
         element={<MyPage />}
+      />
+      <Route
+        path={Pathname.PAY_LINK_PAGE}
+        element={<PayLinkPage />}
       />
     </Routes>
   );
