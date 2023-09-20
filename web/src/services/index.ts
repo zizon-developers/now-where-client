@@ -3,7 +3,7 @@ import { API_HOST } from 'config';
 
 const reissueAccessToken = async () => {
   try {
-    const { headers } = await axios.get(`${API_HOST}/auth/reissue`, {
+    const { headers } = await axios.get(`${API_HOST}/auth/access-token`, {
       headers: {
         'Content-Type': 'application/json',
       },
