@@ -4,6 +4,7 @@ import KakaoOAuthRedirectPage from 'pages/KakaoOAuthRedirectPage';
 import LoginPage from 'pages/LoginPage';
 import MyPage from 'pages/MyPage';
 import PayLinkPage from 'pages/PayLinkPage';
+import FreiendListPage from 'pages/FreiendListPage';
 
 const App = () => {
   return (
@@ -27,6 +28,10 @@ const App = () => {
       <Route
         path={Pathname.PAY_LINK_PAGE}
         element={<PayLinkPage />}
+      />
+      <Route
+        path={Pathname.FREIEND_LIST_PAGE}
+        element={<FreiendListPage />}
       />
     </Routes>
   );
