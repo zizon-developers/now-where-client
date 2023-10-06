@@ -5,6 +5,7 @@ const Pathname = {
   MY_PAGE: '/me',
   PAY_LINK_PAGE: '/paylink',
   FREIEND_LIST_PAGE: '/freiendlist',
+  INVITE_FREIEND_PAGE: '/invitefriend',
 } as const;
 
 export default Pathname;

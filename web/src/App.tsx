@@ -5,6 +5,7 @@ import LoginPage from 'pages/LoginPage';
 import MyPage from 'pages/MyPage';
 import PayLinkPage from 'pages/PayLinkPage';
 import FreiendListPage from 'pages/FreiendListPage';
+import InviteFriendPage from 'pages/InviteFriendPage';
 
 const App = () => {
   return (
@@ -32,6 +33,10 @@ const App = () => {
       <Route
         path={Pathname.FREIEND_LIST_PAGE}
         element={<FreiendListPage />}
+      />
+      <Route
+        path={Pathname.INVITE_FREIEND_PAGE}
+        element={<InviteFriendPage />}
       />
     </Routes>
   );
