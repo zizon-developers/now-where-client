@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({ placeholder, className, ...props }) => {
   return (
     <input
-      className={`border rounded-lg w-full py-4 px-3 mr-1 focus:outline-none focus:border-primary ${className}`}
+      className={`border rounded-lg w-full py-3 px-3 mr-1 focus:outline-none focus:border-primary ${className}`}
       placeholder={placeholder}
       {...props}
     />

@@ -25,7 +25,7 @@ const PayLinkForm = () => {
         placeholder="송금 링크를 여기에 붙여넣거나 입력해주세요."
         value={link}
         onChange={handleInputLinkChange}
-        className="mt-4"
+        className="mt-2"
       />
       <Button
         type="submit"
